@@ -1,0 +1,217 @@
+import { motion } from 'motion/react';
+import { ExternalLink, Github, Gauge } from 'lucide-react';
+
+const projects = [
+  {
+    title: 'Cloud Infrastructure Platform',
+    category: 'DevOps & Cloud',
+    description: 'Automated multi-cloud deployment platform with Kubernetes orchestration',
+    image: 'https://images.unsplash.com/photo-1609465397944-be1ce3ebda61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvciUyMGRhc2hib2FyZHxlbnwxfHx8fDE3Njk2MDcyOTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tech: ['AWS', 'Kubernetes', 'Terraform'],
+    stats: { performance: '99.9%', speed: '2.5s' },
+    gradient: 'from-blue-500/20 to-cyan-500/20',
+    accentColor: 'blue',
+  },
+  {
+    title: 'Real-time Analytics Engine',
+    category: 'Full Stack',
+    description: 'High-performance data processing pipeline with real-time visualization',
+    image: 'https://images.unsplash.com/photo-1654616111851-5394318e3279?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjBlbmdpbmUlMjBkZXRhaWx8ZW58MXx8fHwxNzY5NjA3Mjk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tech: ['React', 'Node.js', 'Redis'],
+    stats: { performance: '98.5%', speed: '100ms' },
+    gradient: 'from-red-500/20 to-orange-500/20',
+    accentColor: 'red',
+  },
+  {
+    title: 'Microservices Architecture',
+    category: 'System Design',
+    description: 'Scalable microservices platform handling millions of daily requests',
+    image: 'https://images.unsplash.com/photo-1766801075605-8c036a5c4ec3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXBlcmNhciUyMGdhcmFnZSUyMHNob3dyb29tfGVufDF8fHx8MTc2OTYwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tech: ['Python', 'Docker', 'GraphQL'],
+    stats: { performance: '99.7%', speed: '50ms' },
+    gradient: 'from-purple-500/20 to-pink-500/20',
+    accentColor: 'purple',
+  },
+  {
+    title: 'Security & Compliance Suite',
+    category: 'Security',
+    description: 'Enterprise-grade security monitoring and compliance automation',
+    image: 'https://images.unsplash.com/photo-1768713533974-52785924880f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjBtb3Rpb24lMjBibHVyJTIwc3BlZWR8ZW58MXx8fHwxNzY5NjA3Mjk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tech: ['AWS', 'Python', 'Terraform'],
+    stats: { performance: '99.9%', speed: '1.2s' },
+    gradient: 'from-green-500/20 to-emerald-500/20',
+    accentColor: 'green',
+  },
+];
+
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className="group relative overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm"
+    >
+      {/* Animated corner accents */}
+      <motion.div
+        className="absolute left-0 top-0 h-1 w-12 bg-gradient-to-r from-red-500 to-transparent"
+        initial={{ width: 0 }}
+        whileInView={{ width: 48 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+      />
+      <motion.div
+        className="absolute left-0 top-0 h-12 w-1 bg-gradient-to-b from-red-500 to-transparent"
+        initial={{ height: 0 }}
+        whileInView={{ height: 48 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+      />
+
+      {/* Image Container */}
+      <div className="relative aspect-video overflow-hidden">
+        <motion.img
+          src={project.image}
+          alt={project.title}
+          className="h-full w-full object-cover"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.6 }}
+        />
+        {/* Overlay Gradient */}
+        <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80`} />
+        
+        {/* Scan line effect on hover */}
+        <motion.div
+          className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100"
+          animate={{ top: ['0%', '100%'] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+        />
+        
+        {/* Category Badge */}
+        <div className="absolute right-4 top-4 bg-black/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
+          {project.category}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h3 className="mb-2 text-2xl font-bold text-white transition-colors group-hover:text-red-500">
+          {project.title}
+        </h3>
+        <p className="mb-4 text-sm text-gray-400">
+          {project.description}
+        </p>
+
+        {/* Tech Stack */}
+        <div className="mb-4 flex flex-wrap gap-2">
+          {project.tech.map((tech) => (
+            <span
+              key={tech}
+              className="border border-white/20 bg-white/5 px-2 py-1 text-xs font-medium text-gray-300"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Stats (Car Spec Style) */}
+        <div className="mb-4 grid grid-cols-2 gap-4 border-t border-white/10 pt-4">
+          <div>
+            <div className="mb-1 flex items-center gap-1">
+              <Gauge className="h-3 w-3 text-gray-500" />
+              <span className="text-xs uppercase tracking-wider text-gray-500">Uptime</span>
+            </div>
+            <div className={`text-lg font-bold text-${project.accentColor}-500`}>
+              {project.stats.performance}
+            </div>
+          </div>
+          <div>
+            <div className="mb-1 flex items-center gap-1">
+              <span className="text-xs uppercase tracking-wider text-gray-500">Response</span>
+            </div>
+            <div className={`text-lg font-bold text-${project.accentColor}-500`}>
+              {project.stats.speed}
+            </div>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-3">
+          <button className="flex flex-1 items-center justify-center gap-2 border border-white/20 bg-white/5 py-2 text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10">
+            <ExternalLink className="h-4 w-4" />
+            View Live
+          </button>
+          <button className="flex items-center justify-center border border-white/20 bg-white/5 px-4 py-2 text-white transition-all hover:border-white/40 hover:bg-white/10">
+            <Github className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Bottom Accent Line */}
+      <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${project.gradient.replace('/20', '')} transition-all duration-500 group-hover:w-full`} />
+    </motion.div>
+  );
+}
+
+export function Projects() {
+  return (
+    <section className="relative bg-gradient-to-b from-black via-zinc-950 to-black py-24 lg:py-32">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-30">
+        <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-red-500/10 blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-[100px]" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <div className="mb-4 flex items-center gap-3">
+            <div className="h-px w-12 bg-gradient-to-r from-red-500 to-transparent" />
+            <span className="text-sm font-medium uppercase tracking-[0.3em] text-red-500">
+              Showroom
+            </span>
+          </div>
+          <h2 className="mb-6 text-5xl font-bold text-white lg:text-6xl">
+            Featured
+            <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+              {' '}Projects
+            </span>
+          </h2>
+          <p className="max-w-2xl text-lg text-gray-400">
+            A curated collection of high-performance solutions. Each project engineered
+            for speed, reliability, and scale.
+          </p>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
+        </div>
+
+        {/* View All CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 text-center"
+        >
+          <button className="group inline-flex items-center gap-2 border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-red-500/50 hover:bg-red-500/10">
+            View All Projects
+            <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
