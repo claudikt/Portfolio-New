@@ -3,45 +3,44 @@ import { Award, Briefcase, CheckCircle2 } from 'lucide-react';
 
 const experiences = [
   {
-    year: '2023 - Present',
-    title: 'Senior Cloud Engineer',
-    company: 'Tech Innovations Inc.',
-    description: 'Leading cloud infrastructure design and DevOps transformation',
+    year: '2024 - Present',
+    title: 'Full Stack Developer',
+    company: 'Capgemini',
+    description: 'Working as a fullstack developer for NBCUniversal',
     achievements: [
-      'Reduced deployment time by 70%',
-      'Architected multi-region infrastructure',
-      'Implemented zero-downtime deployment strategy',
+      'Built and maintained scalable Angular and .NET modules for global sports and Olympics platforms',
+      'Optimized backend APIs and databases to support real-time, high-traffic event data',
+      'Supported CI/CD pipelines and DevOps workflows for automated deployments and quality checks',
     ],
   },
   {
-    year: '2021 - 2023',
+    year: '2023',
     title: 'Full Stack Developer',
-    company: 'Digital Solutions Ltd.',
+    company: 'Bharat Intern',
     description: 'Built scalable web applications and microservices',
     achievements: [
-      'Developed real-time analytics platform',
-      'Improved API response time by 60%',
-      'Mentored junior developers',
+      'Developed a real-time video conferencing app using Angular, Node.js, and WebRTC',
+      'Built secure backend APIs and MySQL database for user and session management',
+      'Delivered a responsive, multi-user solution within a strict six-week timeline',
     ],
   },
   {
-    year: '2019 - 2021',
-    title: 'DevOps Engineer',
-    company: 'StartUp Ventures',
-    description: 'Established CI/CD pipelines and cloud infrastructure',
+    year: '2020 - 2023',
+    title: 'Graphic Designer',
+    company: 'Brij Literature Festival',
+    description: 'Lead the design team for promotional materials and event branding',
     achievements: [
-      'Automated deployment processes',
-      'Implemented monitoring and alerting',
-      'Reduced infrastructure costs by 40%',
+      'Designed end-to-end branding assets including posters, banners, and digital creatives',
+      'Maintained consistent visual identity across online and offline promotional materials',
+      'Collaborated with organizers to deliver high-impact designs under tight event timelines',
     ],
   },
 ];
 
 const certifications = [
-  'AWS Solutions Architect Professional',
-  'Certified Kubernetes Administrator',
-  'Azure DevOps Engineer Expert',
-  'Google Cloud Professional Architect',
+  'Azure Developer Associate',
+  '10+ Google AI Badges',
+  'DevSecOps by EC Council',
 ];
 
 export function Experience() {
@@ -195,7 +194,7 @@ export function Experience() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="mt-8 border border-white/10 bg-gradient-to-br from-red-500/10 to-orange-500/10 p-6 backdrop-blur-sm"
               >
-                <div className="mb-2 text-4xl font-bold text-white">5+</div>
+                <div className="mb-2 text-4xl font-bold text-white">2+</div>
                 <div className="text-sm uppercase tracking-wider text-gray-400">
                   Years of Experience
                 </div>

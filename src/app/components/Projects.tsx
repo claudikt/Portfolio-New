@@ -1,23 +1,39 @@
 import { motion } from 'motion/react';
 import { ExternalLink, Github, Gauge } from 'lucide-react';
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tech: string[];
+  stats: { performance: string; speed: string };
+  gradient: string;
+  accentColor: string;
+  liveUrl?: string;
+};
+
+const projects: Project[] = [
   {
-    title: 'Cloud Infrastructure Platform',
-    category: 'DevOps & Cloud',
-    description: 'Automated multi-cloud deployment platform with Kubernetes orchestration',
-    image: 'https://images.unsplash.com/photo-1609465397944-be1ce3ebda61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvciUyMGRhc2hib2FyZHxlbnwxfHx8fDE3Njk2MDcyOTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tech: ['AWS', 'Kubernetes', 'Terraform'],
+    title: 'PacMan Game',
+    category: 'Web Development',
+    description: 'Pacman game totally developed by me using HTML, CSS and JavaScript',
+    image: 'https://repository-images.githubusercontent.com/805799734/ded2977b-e809-41f7-b7e1-04d67eed9c00',
+  // Replace this placeholder with your actual PacMan game URL (external or relative path).
+    liveUrl: 'https://pacman-bay.vercel.app/',
+    tech: ['HTML', 'JS', 'CSS'],
     stats: { performance: '99.9%', speed: '2.5s' },
     gradient: 'from-blue-500/20 to-cyan-500/20',
     accentColor: 'blue',
   },
   {
-    title: 'Real-time Analytics Engine',
-    category: 'Full Stack',
-    description: 'High-performance data processing pipeline with real-time visualization',
-    image: 'https://images.unsplash.com/photo-1654616111851-5394318e3279?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjBlbmdpbmUlMjBkZXRhaWx8ZW58MXx8fHwxNzY5NjA3Mjk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tech: ['React', 'Node.js', 'Redis'],
+    title: '3D Particle System',
+    category: 'Creative Development',
+    description: 'Interactive 3D particle simulation with smooth animations and real-time responsiveness.',
+    image: 'https://img.freepik.com/free-photo/3d-technology-digital-wave-particle-background_1048-12583.jpg',
+    // Set to the live URL for this project (replace placeholder)
+    liveUrl: 'https://3-d-particle.vercel.app/',
+    tech: ['Three.js', 'JavaScript', 'WebGL'],
     stats: { performance: '98.5%', speed: '100ms' },
     gradient: 'from-red-500/20 to-orange-500/20',
     accentColor: 'red',
@@ -27,6 +43,8 @@ const projects = [
     category: 'System Design',
     description: 'Scalable microservices platform handling millions of daily requests',
     image: 'https://images.unsplash.com/photo-1766801075605-8c036a5c4ec3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXBlcmNhciUyMGdhcmFnZSUyMHNob3dyb29tfGVufDF8fHx8MTc2OTYwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    // Set to the live URL for this project (replace placeholder)
+    liveUrl: 'https://your-microservices-example.example',
     tech: ['Python', 'Docker', 'GraphQL'],
     stats: { performance: '99.7%', speed: '50ms' },
     gradient: 'from-purple-500/20 to-pink-500/20',
@@ -37,6 +55,8 @@ const projects = [
     category: 'Security',
     description: 'Enterprise-grade security monitoring and compliance automation',
     image: 'https://images.unsplash.com/photo-1768713533974-52785924880f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjBtb3Rpb24lMjBibHVyJTIwc3BlZWR8ZW58MXx8fHwxNzY5NjA3Mjk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    // Set to the live URL for this project (replace placeholder)
+    liveUrl: 'https://your-security-example.example',
     tech: ['AWS', 'Python', 'Terraform'],
     stats: { performance: '99.9%', speed: '1.2s' },
     gradient: 'from-green-500/20 to-emerald-500/20',
@@ -44,7 +64,7 @@ const projects = [
   },
 ];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -139,10 +159,23 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
         {/* Action Buttons */}
         <div className="flex gap-3">
-          <button className="flex flex-1 items-center justify-center gap-2 border border-white/20 bg-white/5 py-2 text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10">
-            <ExternalLink className="h-4 w-4" />
-            View Live
-          </button>
+          {project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 items-center justify-center gap-2 border border-white/20 bg-white/5 py-2 text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10"
+            >
+              <ExternalLink className="h-4 w-4" />
+              View Live
+            </a>
+          ) : (
+            <button className="flex flex-1 items-center justify-center gap-2 border border-white/20 bg-white/5 py-2 text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10">
+              <ExternalLink className="h-4 w-4" />
+              View Live
+            </button>
+          )}
+
           <button className="flex items-center justify-center border border-white/20 bg-white/5 px-4 py-2 text-white transition-all hover:border-white/40 hover:bg-white/10">
             <Github className="h-4 w-4" />
           </button>
