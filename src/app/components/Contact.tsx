@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Mail, Linkedin, Github, Twitter, Send } from 'lucide-react';
+import resumeUrl from '../../assets/resume.pdf';
 
 const socialLinks = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/claudikt', color: 'hover:text-purple-500' },
@@ -91,12 +92,17 @@ export function Contact() {
               <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </a>
 
-            <button className="group w-full border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/10 sm:w-auto">
+            <a
+              href={resumeUrl}
+              download
+              className="group w-full border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/10 sm:w-auto"
+              aria-label="Download resume"
+            >
               <span className="flex items-center justify-center gap-2">
                 Download Resume
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
-            </button>
+            </a>
           </motion.div>
 
           {/* Social Links */}

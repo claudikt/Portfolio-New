@@ -49,11 +49,11 @@ export function Navigation() {
                   transition={{ duration: 0.6 }}
                 />
                 <div className="relative flex h-full items-center justify-center text-2xl font-black text-white">
-                  D
+                  P
                 </div>
               </div>
               <div>
-                <div className="text-xl font-black text-white">Dev Portfolio</div>
+                <div className="text-xl font-black text-white">Pranav's Portfolio</div>
                 <div className="font-rajdhani text-[10px] uppercase tracking-widest text-gray-500">
                   Performance Driven
                 </div>
