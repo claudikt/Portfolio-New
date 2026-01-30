@@ -18,7 +18,7 @@ const projects: Project[] = [
     title: 'PacMan Game',
     category: 'Web Development',
     description: 'Pacman game totally developed by me using HTML, CSS and JavaScript',
-    image: 'https://repository-images.githubusercontent.com/805799734/ded2977b-e809-41f7-b7e1-04d67eed9c00',
+    image: 'https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUydGZyMWF0ejh1azE1cGtoNDc4MzNkNWJ0aHY5ZTJvcDVlOTM0eTJxOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/d9QiBcfzg64Io/200w.gif',
   // Replace this placeholder with your actual PacMan game URL (external or relative path).
     liveUrl: 'https://pacman-bay.vercel.app/',
     tech: ['HTML', 'JS', 'CSS'],
@@ -30,7 +30,7 @@ const projects: Project[] = [
     title: '3D Particle System',
     category: 'Creative Development',
     description: 'Interactive 3D particle simulation with smooth animations and real-time responsiveness.',
-    image: 'https://img.freepik.com/free-photo/3d-technology-digital-wave-particle-background_1048-12583.jpg',
+    image: 'https://cdn.dribbble.com/userupload/20991396/file/original-adf8cb50604d42cdc0b062da04316765.gif',
     // Set to the live URL for this project (replace placeholder)
     liveUrl: 'https://3-d-particle.vercel.app/',
     tech: ['Three.js', 'JavaScript', 'WebGL'],
