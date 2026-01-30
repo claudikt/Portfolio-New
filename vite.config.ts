@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-// Removed import of 'url' to avoid TypeScript errors
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -12,9 +12,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      // Alias @ to the src directory (use import.meta.url to avoid Node built-ins)
-      // Using .pathname avoids importing 'url' and keeps this file pure ESM/TS
-      '@': new URL('./src', import.meta.url).pathname,
+  // Alias @ to the src directory using process.cwd() so Vite resolves
+  // imports like `@/...` to the project's `src` folder reliably.
+  '@': path.resolve(process.cwd(), 'src'),
     },
   },
 })
