@@ -127,7 +127,7 @@ export function Skills() {
             {/* Decorative Stats */}
             <div className="mt-8 grid grid-cols-3 gap-4">
               <div className="border-l-2 border-red-500 pl-4">
-                <div className="text-3xl font-bold text-white">50+</div>
+                <div className="text-3xl font-bold text-white">10+</div>
                 <div className="text-xs uppercase tracking-wider text-gray-500">Projects</div>
               </div>
               <div className="border-l-2 border-blue-500 pl-4">
@@ -135,7 +135,7 @@ export function Skills() {
                 <div className="text-xs uppercase tracking-wider text-gray-500">Technologies</div>
               </div>
               <div className="border-l-2 border-orange-500 pl-4">
-                <div className="text-3xl font-bold text-white">5+</div>
+                <div className="text-3xl font-bold text-white">2+</div>
                 <div className="text-xs uppercase tracking-wider text-gray-500">Years</div>
               </div>
             </div>
