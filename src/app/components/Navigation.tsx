@@ -34,29 +34,32 @@ export function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex h-20 items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="flex h-16 sm:h-20 items-center justify-between">
             {/* Logo */}
             <motion.a
               href="#"
-              className="group flex items-center gap-3"
+              className="group flex items-center gap-2 sm:gap-3"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="relative h-12 w-12 overflow-hidden bg-gradient-to-br from-red-500 to-orange-500 shadow-lg shadow-red-500/50">
+              <div className="relative h-10 w-10 sm:h-12 sm:w-12 overflow-hidden bg-gradient-to-br from-red-500 to-orange-500 shadow-lg shadow-red-500/50">
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   whileHover={{ rotate: 180 }}
                   transition={{ duration: 0.6 }}
                 />
-                <div className="relative flex h-full items-center justify-center text-2xl font-black text-white">
+                <div className="relative flex h-full items-center justify-center text-xl sm:text-2xl font-black text-white">
                   P
                 </div>
               </div>
-              <div>
-                <div className="text-xl font-black text-white">Pranav's Portfolio</div>
-                <div className="font-rajdhani text-[10px] uppercase tracking-widest text-gray-500">
+              <div className="hidden sm:block">
+                <div className="text-lg sm:text-xl font-black text-white">Pranav's Portfolio</div>
+                <div className="font-rajdhani text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-500">
                   Performance Driven
                 </div>
+              </div>
+              <div className="block sm:hidden">
+                <div className="text-lg font-black text-white">Pranav</div>
               </div>
             </motion.a>
 
@@ -80,6 +83,7 @@ export function Navigation() {
             {/* CTA Button */}
             <div className="hidden md:block">
               <motion.button
+                onClick={() => window.location.href = 'mailto:prnvvvarshney@gmail.com'}
                 whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(239,68,68,0.4)' }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden border-2 border-red-500/50 bg-gradient-to-r from-red-600/20 to-orange-600/20 px-6 py-2.5 font-bold text-white backdrop-blur-sm transition-all hover:border-red-500"
@@ -134,6 +138,7 @@ export function Navigation() {
               </motion.a>
             ))}
             <motion.button
+              onClick={() => window.location.href = 'mailto:prnvvvarshney@gmail.com'}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}

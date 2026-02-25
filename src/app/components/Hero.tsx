@@ -134,7 +134,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="mb-8"
             >
-              <h1 className="mb-4 text-7xl font-black leading-[0.95] tracking-tighter text-white md:text-8xl lg:text-9xl">
+              <h1 className="mb-4 text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[0.95] tracking-tighter text-white">
                 <motion.span
                   className="inline-block"
                   initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ export function Hero() {
                   </span>
                   {/* Animated underline */}
                   <motion.div
-                    className="absolute -bottom-2 left-0 h-2 bg-gradient-to-r from-red-500 via-orange-500 to-red-500"
+                    className="absolute -bottom-1 sm:-bottom-2 left-0 h-1 sm:h-2 bg-gradient-to-r from-red-500 via-orange-500 to-red-500"
                     initial={{ width: 0 }}
                     animate={{ width: '100%' }}
                     transition={{ duration: 1, delay: 1.2 }}
@@ -171,12 +171,12 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 1.1 }}
               className="mb-10 space-y-2"
             >
-              <p className="flex items-center gap-3 text-2xl font-semibold text-gray-200 md:text-3xl">
-                <Gauge className="h-6 w-6 text-red-500" />
+              <p className="flex items-center gap-3 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-200">
+                <Gauge className="h-5 w-5 sm:h-6 sm:w-6 text-red-500" />
                 Designing Precision. Delivering Excellence.
               </p>
-              <p className="flex items-center gap-3 pl-9 text-xl text-gray-400 md:text-2xl">
-                <Sparkles className="h-5 w-5 text-orange-500" />
+              <p className="flex items-center gap-3 pl-7 sm:pl-9 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400">
+                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-orange-500" />
                 Where Code Meets Craftsmanship.
               </p>
             </motion.div>
@@ -186,7 +186,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.3 }}
-              className="mb-12 grid grid-cols-3 gap-6 md:w-2/3"
+              className="mb-12 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full sm:w-4/5 md:w-2/3"
             >
               {[
                 { value: '99.9%', label: 'Uptime' },
@@ -198,10 +198,10 @@ export function Hero() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.4 + i * 0.1 }}
-                  className="relative overflow-hidden border-l-2 border-red-500 bg-gradient-to-r from-red-500/10 to-transparent pl-4 backdrop-blur-sm"
+                  className="relative overflow-hidden border-l-2 border-red-500 bg-gradient-to-r from-red-500/10 to-transparent pl-3 sm:pl-4 py-2 sm:py-0 backdrop-blur-sm"
                 >
-                  <div className="text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="font-rajdhani text-xs uppercase tracking-wider text-gray-400">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</div>
+                  <div className="font-rajdhani text-[10px] sm:text-xs uppercase tracking-wider text-gray-400">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -213,14 +213,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.5 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 0 50px rgba(239,68,68,0.6)' }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative overflow-hidden bg-gradient-to-r from-red-600 to-orange-600 px-10 py-5 font-bold text-white shadow-[0_0_30px_rgba(239,68,68,0.3)] transition-all"
+                className="group relative overflow-hidden bg-gradient-to-r from-red-600 to-orange-600 px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 font-bold text-white shadow-[0_0_30px_rgba(239,68,68,0.3)] transition-all w-full sm:w-auto"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   View Projects
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
@@ -240,7 +240,7 @@ export function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05, borderColor: 'rgba(255,255,255,0.8)' }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative overflow-hidden border-2 border-white/30 bg-white/5 px-10 py-5 font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10"
+                className="group relative overflow-hidden border-2 border-white/30 bg-white/5 px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10 w-full sm:w-auto"
               >
                 <span className="relative z-10">Get in Touch</span>
                 <motion.div
