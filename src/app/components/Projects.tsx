@@ -110,26 +110,26 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         />
         
         {/* Category Badge */}
-        <div className="absolute right-4 top-4 bg-black/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
+        <div className="absolute right-2 top-2 sm:right-4 sm:top-4 bg-black/80 px-2 py-1 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
           {project.category}
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 className="mb-2 text-2xl font-bold text-white transition-colors group-hover:text-red-500">
+      <div className="p-4 sm:p-6">
+        <h3 className="mb-2 text-lg sm:text-xl md:text-2xl font-bold text-white transition-colors group-hover:text-red-500">
           {project.title}
         </h3>
-        <p className="mb-4 text-sm text-gray-400">
+        <p className="mb-3 sm:mb-4 text-xs sm:text-sm text-gray-400">
           {project.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="mb-4 flex flex-wrap gap-2">
+        <div className="mb-3 sm:mb-4 flex flex-wrap gap-1.5 sm:gap-2">
           {project.tech.map((tech) => (
             <span
               key={tech}
-              className="border border-white/20 bg-white/5 px-2 py-1 text-xs font-medium text-gray-300"
+              className="border border-white/20 bg-white/5 px-1.5 py-0.5 sm:px-2 sm:py-1 text-[10px] sm:text-xs font-medium text-gray-300"
             >
               {tech}
             </span>
@@ -137,47 +137,47 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Stats (Car Spec Style) */}
-        <div className="mb-4 grid grid-cols-2 gap-4 border-t border-white/10 pt-4">
+        <div className="mb-3 sm:mb-4 grid grid-cols-2 gap-3 sm:gap-4 border-t border-white/10 pt-3 sm:pt-4">
           <div>
             <div className="mb-1 flex items-center gap-1">
-              <Gauge className="h-3 w-3 text-gray-500" />
-              <span className="text-xs uppercase tracking-wider text-gray-500">Uptime</span>
+              <Gauge className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-gray-500" />
+              <span className="text-[10px] sm:text-xs uppercase tracking-wider text-gray-500">Uptime</span>
             </div>
-            <div className={`text-lg font-bold text-${project.accentColor}-500`}>
+            <div className={`text-sm sm:text-base md:text-lg font-bold text-${project.accentColor}-500`}>
               {project.stats.performance}
             </div>
           </div>
           <div>
             <div className="mb-1 flex items-center gap-1">
-              <span className="text-xs uppercase tracking-wider text-gray-500">Response</span>
+              <span className="text-[10px] sm:text-xs uppercase tracking-wider text-gray-500">Response</span>
             </div>
-            <div className={`text-lg font-bold text-${project.accentColor}-500`}>
+            <div className={`text-sm sm:text-base md:text-lg font-bold text-${project.accentColor}-500`}>
               {project.stats.speed}
             </div>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-3">
+        <div className="flex gap-2 sm:gap-3">
           {project.liveUrl ? (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-2 border border-white/20 bg-white/5 py-2 text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10"
+              className="flex flex-1 items-center justify-center gap-1.5 sm:gap-2 border border-white/20 bg-white/5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10"
             >
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
               View Live
             </a>
           ) : (
-            <button className="flex flex-1 items-center justify-center gap-2 border border-white/20 bg-white/5 py-2 text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10">
-              <ExternalLink className="h-4 w-4" />
+            <button className="flex flex-1 items-center justify-center gap-1.5 sm:gap-2 border border-white/20 bg-white/5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white transition-all hover:border-white/40 hover:bg-white/10">
+              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
               View Live
             </button>
           )}
 
-          <button className="flex items-center justify-center border border-white/20 bg-white/5 px-4 py-2 text-white transition-all hover:border-white/40 hover:bg-white/10">
-            <Github className="h-4 w-4" />
+          <button className="flex items-center justify-center border border-white/20 bg-white/5 px-3 py-1.5 sm:px-4 sm:py-2 text-white transition-all hover:border-white/40 hover:bg-white/10">
+            <Github className="h-3 w-3 sm:h-4 sm:w-4" />
           </button>
         </div>
       </div>
@@ -197,7 +197,7 @@ export function Projects() {
         <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-[100px]" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -212,20 +212,20 @@ export function Projects() {
               Showroom
             </span>
           </div>
-          <h2 className="mb-6 text-5xl font-bold text-white lg:text-6xl">
+          <h2 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             Featured
             <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
               {' '}Projects
             </span>
           </h2>
-          <p className="max-w-2xl text-lg text-gray-400">
+          <p className="max-w-2xl text-sm sm:text-base md:text-lg text-gray-400">
             A curated collection of high-performance solutions. Each project engineered
             for speed, reliability, and scale.
           </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
@@ -239,7 +239,7 @@ export function Projects() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <button className="group inline-flex items-center gap-2 border border-white/30 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-red-500/50 hover:bg-red-500/10">
+          <button className="group inline-flex items-center gap-2 border border-white/30 bg-white/5 px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-red-500/50 hover:bg-red-500/10">
             View All Projects
             <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>

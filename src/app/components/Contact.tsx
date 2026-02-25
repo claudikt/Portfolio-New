@@ -44,7 +44,7 @@ export function Contact() {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
           <motion.div
@@ -61,13 +61,13 @@ export function Contact() {
               </span>
               <div className="h-px w-12 bg-gradient-to-r from-red-500 to-transparent" />
             </div>
-            <h2 className="mb-6 text-5xl font-bold text-white lg:text-6xl">
+            <h2 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
               Start Your
               <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
                 {' '}Engine
               </span>
             </h2>
-            <p className="text-lg text-gray-400 lg:text-xl">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-400">
               Ready to build something exceptional? Let's accelerate your project together.
             </p>
           </motion.div>
@@ -82,11 +82,11 @@ export function Contact() {
           >
             <a
               href="mailto:prnvvarshney@gmail.com"
-              className="group relative w-full overflow-hidden bg-gradient-to-r from-red-600 to-orange-600 px-8 py-4 font-semibold text-white transition-all hover:shadow-[0_0_40px_rgba(239,68,68,0.6)] sm:w-auto"
+              className="group relative w-full overflow-hidden bg-gradient-to-r from-red-600 to-orange-600 px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white transition-all hover:shadow-[0_0_40px_rgba(239,68,68,0.6)] sm:w-auto"
               aria-label="Send email"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
-                <Mail className="h-5 w-5" />
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 Send Message
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -118,7 +118,7 @@ export function Contact() {
                 Follow the Journey
               </span>
             </div>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-3 sm:gap-4">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -128,12 +128,12 @@ export function Contact() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                   whileHover={{ y: -4 }}
-                  className={`group relative flex h-14 w-14 items-center justify-center border border-white/20 bg-white/5 backdrop-blur-sm transition-all hover:border-white/40 ${social.color}`}
+                  className={`group relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center border border-white/20 bg-white/5 backdrop-blur-sm transition-all hover:border-white/40 ${social.color}`}
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5 text-white transition-colors" />
+                  <social.icon className="h-4 w-4 sm:h-5 sm:w-5 text-white transition-colors" />
                   {/* Tooltip */}
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/10 px-2 py-1 text-xs text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+                  <div className="absolute -top-8 sm:-top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/10 px-2 py-1 text-xs text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
                     {social.label}
                   </div>
                 </motion.a>
@@ -149,20 +149,20 @@ export function Contact() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="grid gap-6 sm:grid-cols-2"
           >
-            <div className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-6 text-center backdrop-blur-sm">
-              <div className="mb-2 text-sm uppercase tracking-wider text-gray-500">Email</div>
+            <div className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-4 sm:p-6 text-center backdrop-blur-sm">
+              <div className="mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-500">Email</div>
               <a
                 href="mailto:contact@example.com"
-                className="text-lg font-semibold text-white transition-colors group-hover:text-red-500"
+                className="text-sm sm:text-base md:text-lg font-semibold text-white transition-colors group-hover:text-red-500"
               >
                 prnvvarshney@gmail.com
               </a>
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-red-500 to-orange-500 transition-all duration-300 group-hover:w-full" />
             </div>
 
-            <div className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-6 text-center backdrop-blur-sm">
-              <div className="mb-2 text-sm uppercase tracking-wider text-gray-500">Location</div>
-              <p className="text-lg font-semibold text-white">Bengaluru, India</p>
+            <div className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-4 sm:p-6 text-center backdrop-blur-sm">
+              <div className="mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-500">Location</div>
+              <p className="text-sm sm:text-base md:text-lg font-semibold text-white">Bengaluru, India</p>
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-300 group-hover:w-full" />
             </div>
           </motion.div>

@@ -69,7 +69,7 @@ export function About() {
         />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -176,21 +176,21 @@ export function About() {
 
               {/* Icon Container */}
               <motion.div
-                className={`relative z-10 mb-6 inline-flex rounded-xl bg-gradient-to-br ${feature.color} p-4 shadow-lg ${feature.shadowColor}`}
+                className={`relative z-10 mb-4 sm:mb-6 inline-flex rounded-xl bg-gradient-to-br ${feature.color} p-3 sm:p-4 shadow-lg ${feature.shadowColor}`}
                 whileHover={{ 
                   rotate: [0, -10, 10, -10, 0],
                   scale: 1.1,
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <feature.icon className="h-8 w-8 text-white" />
+                <feature.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </motion.div>
 
               {/* Content */}
-              <h3 className="relative z-10 mb-3 text-2xl font-bold text-white">
+              <h3 className="relative z-10 mb-2 sm:mb-3 text-lg sm:text-xl md:text-2xl font-bold text-white">
                 {feature.title}
               </h3>
-              <p className="relative z-10 text-sm leading-relaxed text-gray-400">
+              <p className="relative z-10 text-xs sm:text-sm leading-relaxed text-gray-400">
                 {feature.description}
               </p>
 
@@ -222,7 +222,7 @@ export function About() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <p className="text-lg text-gray-400">
+          <p className="text-sm sm:text-base md:text-lg text-gray-400">
             Interested in working together?{' '}
             <motion.a
               href="#contact"

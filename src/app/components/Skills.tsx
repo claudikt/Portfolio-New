@@ -23,18 +23,18 @@ function SkillMeter({ skill, index }: { skill: typeof skills[0]; index: number }
       className="group"
     >
       {/* Skill Name and Level */}
-      <div className="mb-3 flex items-end justify-between">
-        <h3 className="font-semibold text-white">{skill.name}</h3>
+      <div className="mb-2 sm:mb-3 flex items-end justify-between">
+        <h3 className="text-sm sm:text-base font-semibold text-white">{skill.name}</h3>
         <div className="flex items-baseline gap-1">
           <motion.span
             initial={{ opacity: 0 }}
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
-            className={`bg-gradient-to-r ${skill.color} bg-clip-text text-2xl font-bold text-transparent`}
+            className={`bg-gradient-to-r ${skill.color} bg-clip-text text-lg sm:text-xl md:text-2xl font-bold text-transparent`}
           >
             {isVisible ? skill.level : 0}
           </motion.span>
-          <span className="text-xs text-gray-500">/ 100</span>
+          <span className="text-[10px] sm:text-xs text-gray-500">/ 100</span>
         </div>
       </div>
 
@@ -96,7 +96,7 @@ export function Skills() {
            }}
       />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: Header */}
           <motion.div
@@ -112,37 +112,37 @@ export function Skills() {
                 Technical Specs
               </span>
             </div>
-            <h2 className="mb-6 text-5xl font-bold leading-tight text-white lg:text-6xl">
+            <h2 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
               Performance
               <br />
               <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
                 Dashboard
               </span>
             </h2>
-            <p className="text-lg text-gray-400">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400">
               Like a finely-tuned engine, every skill is optimized for maximum performance.
               Each technology mastered, each tool refined to precision.
             </p>
 
             {/* Decorative Stats */}
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              <div className="border-l-2 border-red-500 pl-4">
-                <div className="text-3xl font-bold text-white">10+</div>
-                <div className="text-xs uppercase tracking-wider text-gray-500">Projects</div>
+            <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4">
+              <div className="border-l-2 border-red-500 pl-2 sm:pl-4">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">10+</div>
+                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-gray-500">Projects</div>
               </div>
-              <div className="border-l-2 border-blue-500 pl-4">
-                <div className="text-3xl font-bold text-white">10+</div>
-                <div className="text-xs uppercase tracking-wider text-gray-500">Technologies</div>
+              <div className="border-l-2 border-blue-500 pl-2 sm:pl-4">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">10+</div>
+                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-gray-500">Technologies</div>
               </div>
-              <div className="border-l-2 border-orange-500 pl-4">
-                <div className="text-3xl font-bold text-white">2+</div>
-                <div className="text-xs uppercase tracking-wider text-gray-500">Years</div>
+              <div className="border-l-2 border-orange-500 pl-2 sm:pl-4">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">2+</div>
+                <div className="text-[10px] sm:text-xs uppercase tracking-wider text-gray-500">Years</div>
               </div>
             </div>
           </motion.div>
 
           {/* Right: Skills Dashboard */}
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
             {skills.map((skill, index) => (
               <SkillMeter key={skill.name} skill={skill} index={index} />
             ))}

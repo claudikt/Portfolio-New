@@ -57,7 +57,7 @@ export function Experience() {
         ))}
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ export function Experience() {
             </span>
             <div className="h-px w-12 bg-gradient-to-r from-red-500 to-transparent" />
           </div>
-          <h2 className="mb-6 text-5xl font-bold text-white lg:text-6xl">
+          <h2 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             Racing
             <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
               {' '}History
@@ -81,12 +81,12 @@ export function Experience() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
+        <div className="grid gap-6 sm:gap-8 md:gap-12 lg:grid-cols-3 lg:gap-8">
           {/* Experience Timeline */}
           <div className="lg:col-span-2">
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-8 top-0 h-full w-px bg-gradient-to-b from-red-500 via-orange-500 to-transparent lg:left-0" />
+              <div className="absolute left-4 sm:left-6 md:left-8 lg:left-0 top-0 h-full w-px bg-gradient-to-b from-red-500 via-orange-500 to-transparent" />
 
               {/* Experience Items */}
               <div className="space-y-12">
@@ -97,43 +97,43 @@ export function Experience() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
-                    className="relative pl-20 lg:pl-12"
+                    className="relative pl-12 sm:pl-16 md:pl-20 lg:pl-12"
                   >
                     {/* Timeline Node */}
-                    <div className="absolute left-6 top-0 flex h-5 w-5 items-center justify-center rounded-full border-2 border-red-500 bg-black lg:left-[-10px]">
-                      <div className="h-2 w-2 rounded-full bg-red-500" />
+                    <div className="absolute left-2 sm:left-4 md:left-6 lg:left-[-10px] top-0 flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full border-2 border-red-500 bg-black">
+                      <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-red-500" />
                     </div>
 
                     {/* Content Card */}
-                    <div className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-6 backdrop-blur-sm transition-all hover:border-red-500/30">
+                    <div className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-4 sm:p-6 backdrop-blur-sm transition-all hover:border-red-500/30">
                       {/* Year Badge */}
-                      <div className="mb-3 inline-block bg-gradient-to-r from-red-500 to-orange-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                      <div className="mb-2 sm:mb-3 inline-block bg-gradient-to-r from-red-500 to-orange-500 px-2 py-1 sm:px-3 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white">
                         {exp.year}
                       </div>
 
                       {/* Title & Company */}
-                      <div className="mb-3 flex items-start justify-between gap-4">
+                      <div className="mb-2 sm:mb-3 flex items-start justify-between gap-4">
                         <div>
-                          <h3 className="mb-1 text-2xl font-bold text-white">
+                          <h3 className="mb-1 text-lg sm:text-xl md:text-2xl font-bold text-white">
                             {exp.title}
                           </h3>
                           <div className="flex items-center gap-2 text-gray-400">
-                            <Briefcase className="h-4 w-4" />
-                            <span>{exp.company}</span>
+                            <Briefcase className="h-3 w-3 sm:h-4 sm:w-4" />
+                            <span className="text-sm sm:text-base">{exp.company}</span>
                           </div>
                         </div>
                       </div>
 
-                      <p className="mb-4 text-gray-400">{exp.description}</p>
+                      <p className="mb-3 sm:mb-4 text-sm sm:text-base text-gray-400">{exp.description}</p>
 
                       {/* Achievements */}
-                      <div className="space-y-2">
+                      <div className="space-y-1.5 sm:space-y-2">
                         {exp.achievements.map((achievement) => (
                           <div
                             key={achievement}
-                            className="flex items-start gap-2 text-sm text-gray-300"
+                            className="flex items-start gap-2 text-xs sm:text-sm text-gray-300"
                           >
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-500" />
+                            <CheckCircle2 className="mt-0.5 h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0 text-green-500" />
                             <span>{achievement}</span>
                           </div>
                         ))}
@@ -155,16 +155,16 @@ export function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="sticky top-8"
+              className="sticky top-8 lg:static lg:top-auto"
             >
               {/* Header */}
-              <div className="mb-6 flex items-center gap-3">
-                <Award className="h-6 w-6 text-red-500" />
-                <h3 className="text-2xl font-bold text-white">Certifications</h3>
+              <div className="mb-4 sm:mb-6 flex items-center gap-3">
+                <Award className="h-5 w-5 sm:h-6 sm:w-6 text-red-500" />
+                <h3 className="text-xl sm:text-2xl font-bold text-white">Certifications</h3>
               </div>
 
               {/* Certifications List */}
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {certifications.map((cert, index) => (
                   <motion.div
                     key={cert}
@@ -172,13 +172,13 @@ export function Experience() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-4 backdrop-blur-sm transition-all hover:border-blue-500/30"
+                    className="group relative overflow-hidden border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-3 sm:p-4 backdrop-blur-sm transition-all hover:border-blue-500/30"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500">
-                        <Award className="h-5 w-5 text-white" />
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <div className="flex h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500">
+                        <Award className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                       </div>
-                      <p className="text-sm font-semibold text-white">{cert}</p>
+                      <p className="text-xs sm:text-sm font-semibold text-white">{cert}</p>
                     </div>
                     {/* Hover Accent */}
                     <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-300 group-hover:w-full" />
@@ -192,10 +192,10 @@ export function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-8 border border-white/10 bg-gradient-to-br from-red-500/10 to-orange-500/10 p-6 backdrop-blur-sm"
+                className="mt-6 sm:mt-8 border border-white/10 bg-gradient-to-br from-red-500/10 to-orange-500/10 p-4 sm:p-6 backdrop-blur-sm"
               >
-                <div className="mb-2 text-4xl font-bold text-white">2+</div>
-                <div className="text-sm uppercase tracking-wider text-gray-400">
+                <div className="mb-2 text-3xl sm:text-4xl font-bold text-white">2+</div>
+                <div className="text-xs sm:text-sm uppercase tracking-wider text-gray-400">
                   Years of Experience
                 </div>
               </motion.div>

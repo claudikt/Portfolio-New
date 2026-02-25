@@ -132,7 +132,7 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-2xl font-bold text-white transition-colors hover:text-red-500"
+                className="text-lg sm:text-xl md:text-2xl font-bold text-white transition-colors hover:text-red-500"
               >
                 {item.label}
               </motion.a>
@@ -142,7 +142,7 @@ export function Navigation() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
-              className="mt-4 bg-gradient-to-r from-red-600 to-orange-600 px-8 py-3 font-semibold text-white"
+              className="mt-4 bg-gradient-to-r from-red-600 to-orange-600 px-6 py-2.5 sm:px-8 sm:py-3 font-semibold text-white rounded-lg"
             >
               Let's Talk
             </motion.button>
