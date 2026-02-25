@@ -91,7 +91,7 @@ export function About() {
             </span>
           </div>
           
-          <h2 className="mb-8 text-6xl font-black leading-tight text-white lg:text-7xl">
+          <h2 className="mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-white">
             Built for
             <motion.span
               className="relative ml-4 inline-block"
@@ -142,7 +142,7 @@ export function About() {
         </motion.div>
 
         {/* Feature Cards */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -154,7 +154,7 @@ export function About() {
                 y: -12,
                 transition: { duration: 0.2 }
               }}
-              className="group relative overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-8 backdrop-blur-sm transition-all"
+              className="group relative overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-4 sm:p-6 md:p-8 backdrop-blur-sm transition-all"
             >
               {/* Animated Border Glow */}
               <motion.div
